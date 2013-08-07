@@ -1,3 +1,5 @@
+/* Implementing Multiple Inheritence which is having same method in both the Interfaces */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

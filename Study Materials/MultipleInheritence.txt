@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace MultipleInheritenceCSharp
+{
+    //The Icar interface should defines all car properties
+    interface Icar
+    {
+        int WheelsCount();
+
+    }
+
+    //The IPlane interface should defines all plane properties
+    interface IPlane
+    {
+        int WheelsCount();
+
+    }
+
+    //The superCar class should implement Icar and Iplane interfaces to become supercar
+    class SuperCar : Icar, IPlane
+    {
+
+        //The class should implement both intefaces
+        #region Icar Members
+       
+         int Icar.WheelsCount()
+        {
+            return 4;
+        }
+         int IPlane.WheelsCount()
+        {
+            return 6;
+        }
+        #endregion
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Creating instance for SuperCar class
+            Icar mysupercar = new SuperCar();
+
+            Console.WriteLine("My Super Car has " + mysupercar.WheelsCount() + " Wheels and can fly is ");
+
+            Console.ReadLine();  
+        }
+    }
+}
